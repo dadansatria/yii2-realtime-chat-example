@@ -15,7 +15,7 @@ DIRECTORY STRUCTURE
       web/                contains the entry script and Web resources
 
 
-Built With Ratchnet WebSockets
+Built With Ratchet WebSockets
 -------------------
 
 > <
