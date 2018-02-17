@@ -4,9 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3b77b67a455f8c99a46b21f72fda44dc",
-    "content-hash": "fe72bab82c26072dc006c828076816b7",
+    "hash": "f6160577050c126f73c5634138dc14ea",
+    "content-hash": "d6e7f4e43291c6d834fee14c54383591",
     "packages": [
+        {
+            "name": "bower-asset/admin-lte",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/almasaeed2010/AdminLTE.git",
+                "reference": "5b7d35a2f2c0ee1b8e6cd7acfa235c497f3f616a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/5b7d35a2f2c0ee1b8e6cd7acfa235c497f3f616a",
+                "reference": "5b7d35a2f2c0ee1b8e6cd7acfa235c497f3f616a",
+                "shasum": null
+            },
+            "type": "bower-asset"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.7",
@@ -27,6 +43,27 @@
             "type": "bower-asset",
             "license": [
                 "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/font-awesome",
+            "version": "v4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "OFL-1.1",
+                "MIT",
+                "CC-BY-3.0"
             ]
         },
         {
@@ -167,6 +204,98 @@
                 "markdown-extra"
             ],
             "time": "2017-07-16 21:13:23"
+        },
+        {
+            "name": "cebe/yii2-gravatar",
+            "version": "1.1",
+            "target-dir": "cebe/gravatar",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/yii2-gravatar.git",
+                "reference": "c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/yii2-gravatar/zipball/c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057",
+                "reference": "c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-0": {
+                    "cebe\\gravatar\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Core framework development"
+                }
+            ],
+            "description": "Gravatar Widget for Yii 2",
+            "keywords": [
+                "gravatar",
+                "yii"
+            ],
+            "time": "2013-12-10 17:49:58"
+        },
+        {
+            "name": "dmstr/yii2-adminlte-asset",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
+                "reference": "750bf2fa9d6fbaa0c90ed7aed542a56209b92e56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/750bf2fa9d6fbaa0c90ed7aed542a56209b92e56",
+                "reference": "750bf2fa9d6fbaa0c90ed7aed542a56209b92e56",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/admin-lte": "~1.3",
+                "bower-asset/font-awesome": "~4.0",
+                "cebe/yii2-gravatar": "1.*",
+                "yiisoft/yii2": "2.*",
+                "yiisoft/yii2-bootstrap": "2.*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dmstr\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Munk",
+                    "email": "tobias@diemeisterei.de"
+                },
+                {
+                    "name": "Evgeniy Tkachenko",
+                    "email": "et.coder@gmail.com"
+                }
+            ],
+            "description": "Backend theme for Yii2 Framework",
+            "keywords": [
+                "AdminLTE",
+                "extension",
+                "yii2"
+            ],
+            "time": "2015-03-20 13:33:22"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -478,6 +607,54 @@
                 "yii2"
             ],
             "time": "2016-12-20 13:26:02"
+        },
+        {
+            "name": "yiisoft/yii2-redis",
+            "version": "2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-redis.git",
+                "reference": "3891bb19f3ddc7ad744b439fe1d656ebb5b60a99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-redis/zipball/3891bb19f3ddc7ad744b439fe1d656ebb5b60a99",
+                "reference": "3891bb19f3ddc7ad744b439fe1d656ebb5b60a99",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\redis\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc"
+                }
+            ],
+            "description": "Redis Cache, Session and ActiveRecord for the Yii framework",
+            "keywords": [
+                "active-record",
+                "cache",
+                "redis",
+                "session",
+                "yii2"
+            ],
+            "time": "2017-12-11 21:17:34"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
