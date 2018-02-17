@@ -8,6 +8,7 @@ DIRECTORY STRUCTURE
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
       models/             contains model classes
+      nodejs/             server.js -> get data from server without sending request from client
       runtime/            contains files generated during runtime
       tests/              contains various tests for the basic application
       vendor/             contains dependent 3rd-party packages
@@ -15,7 +16,8 @@ DIRECTORY STRUCTURE
       web/                contains the entry script and Web resources
 
 
-Built With Ratchet WebSockets
+Built With Socket.io 
 -------------------
 
-> <
+"> <"
+
