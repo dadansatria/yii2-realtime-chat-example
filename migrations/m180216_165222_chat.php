@@ -32,7 +32,7 @@ class m180216_165222_chat extends Migration
     {
         $this->createTable('chat', [
             'id' => Schema::TYPE_PK,
-            'id_user' => Schema::TYPE_STRING . ' NOT NULL',
+            'user' => Schema::TYPE_STRING . ' NOT NULL',
             'teks' => Schema::TYPE_TEXT,
             'waktu_dibuat' => Schema::TYPE_DATETIME,
         ]);
@@ -40,9 +40,7 @@ class m180216_165222_chat extends Migration
 
     public function down()
     {
-        echo "m180216_165222_chat cannot be reverted.\n";
-
-        return false;
+        $this->dropTable('chat');
     }
     
 }
