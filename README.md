@@ -21,3 +21,11 @@ Built With Socket.io
 
 "> <"
 
+Database 
+-------------------
+Apply the database migration to create the table required to store the chatting messages
+
+```
+php yii migrate/up
+```
+
