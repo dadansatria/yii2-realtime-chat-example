@@ -79,7 +79,7 @@ class SiteController extends Controller
 
             return Yii::$app->redis->executeCommand('PUBLISH', [
                 'channel' => 'chat',
-                'message' => Json::encode(['teks' => $teks,'user' => Yii::$app->user->id])
+                'message' => Json::encode(['teks' => $teks,'session' => Yii::$app->user->id,'user'=>$chat->user])
             ]);
 
         }

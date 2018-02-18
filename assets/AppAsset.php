@@ -24,10 +24,13 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/socket.io-1.3.5.js',
-        'js/chat.js'
+        'js/chat.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_HEAD
+    ];    
 }

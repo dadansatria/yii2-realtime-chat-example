@@ -47,4 +47,9 @@ class Chat extends \yii\db\ActiveRecord
             'waktu_dibuat' => 'Waktu Dibuat',
         ];
     }
+
+    public function getNamaUser()
+    {
+        return $this->user;
+    }
 }

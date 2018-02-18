@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+
 $js = <<<JS
 $('#chat-form').submit(function() {
 
@@ -19,9 +20,31 @@ $('#chat-form').submit(function() {
 
      return false;
 });
+
+
+
 JS;
 $this->registerJs($js, \yii\web\View::POS_READY)
 ?>
+
+
+<style type="text/css">
+    .friend {
+        background: #efefef;
+        width: 80%;
+        padding: 3px 10px 3px 10px;
+        border-radius: 7px
+    }
+
+    .me {
+        text-align: right;
+        background: #71c7a0;
+        width: 80%;
+        margin-left: 20% !important;
+        padding: 3px 10px 3px 10px;
+        border-radius: 7px
+    }   
+</style>
 
 <div class="box box-success">
     <div class="box-header">
@@ -41,19 +64,30 @@ $this->registerJs($js, \yii\web\View::POS_READY)
 
         <div class="box-body chat" id="chat-box">
             <!-- chat item -->
-            <?php foreach ($query as $chat): ?>
+            <?php foreach ($query as $chat):
+                if ($chat->user == Yii::$app->user->id) {
+                    $avatar = false;
+                    $class = 'me';
+                } else{
+                    $avatar = true;
+                    $class = 'friend';                    
+                }
+            ?>                
+                
                 <div class="item">
-                    <img src="img/avatar.png" alt="user image" class="online"/>
-                    <p class="message">
+                    <?php if ($avatar): ?>
+                        <img src="img/avatar.png" alt="user image" class="online"/>
+                    <?php endif ?>
+                    <p class="message <?= $class; ?>">
                         <a href="#" class="name">
                             <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
                             <?= $chat->user; ?>
                         </a>
-                        <?= $chat->teks; ?>
+                        <?= $chat->user; ?>
                     </p>
                 </div>
             <?php endforeach ?>
-            <div id="append"></div>
+            <div id="append" style="color: red"></div>
         </div><!-- /.chat -->
         <div class="box-footer">
             <div class="input-group">
@@ -71,3 +105,55 @@ $this->registerJs($js, \yii\web\View::POS_READY)
         </div>
     <?= Html::endForm() ?>        
 </div><!-- /.box (chat box) -->
+
+<script type="text/javascript">
+$( document ).ready(function() {
+
+    var socket = io.connect('http://localhost:8890');
+
+    socket.on('chat', function (data) {
+
+        var message = JSON.parse(data);
+
+        if (message.teks == 'dadan') {
+            notifyMe();
+        }
+
+        session = <?php print Yii::$app->user->id; ?>
+
+        if (message.user == session) {
+          content_class = 'me';
+        } else{
+          content_class = 'friend';
+        }
+
+        $( "#append" ).append(
+              '<div class="item">' +
+                    '<div>&nbsp;</div>' +
+                    '<div>&nbsp;</div>' +
+                    '<p class="message '+content_class+'">' +
+                        message.teks +
+                    '</p>' +
+              '</div>'          
+          );
+
+    });
+
+});
+function notifyMe() {
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification('Notification title', {
+      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+      body: "Hey there! You've been notified!",
+    });
+
+    notification.onclick = function () {
+      window.open("http://stackoverflow.com/a/13328397/1269037");      
+    };
+
+  }
+
+}    
+</script>
