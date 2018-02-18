@@ -29,3 +29,13 @@ Apply the database migration to create the table required to store the chatting 
 php yii migrate/up
 ```
 
+Running Websocket Client Server 
+-------------------
+
+```
+nodejs/node server.js
+```
+
+Preview
+-------------------
+![Alt Text](https://media.giphy.com/media/cdI8Myrv9GkSG3KIPp/giphy.gif)
