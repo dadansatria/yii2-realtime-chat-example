@@ -2,16 +2,15 @@ $( document ).ready(function() {
 
     var socket = io.connect('http://localhost:8890');
 
-    socket.on('notification', function (data) {
+    socket.on('chat', function (data) {
 
         var message = JSON.parse(data);
 
-        if (message.message == 'dadan') {
+        if (message.teks == 'dadan') {
         	notifyMe();
         }
 
-        $( "#id_user" ).prepend(message.name);
-        $( "#teks" ).prepend( message.message);
+        $( "#chat" ).prepend( "</strong>: " + message.teks + "</p>" );
 
     });
 

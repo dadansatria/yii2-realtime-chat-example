@@ -44,6 +44,12 @@ class ChatController extends Controller
         ]);
     }
 
+    public function actionTruncate()
+    {
+        Yii::$app->db->createCommand()->truncateTable('chat')->execute();
+        $this->redirect(Yii::$app->request->referrer);
+    }
+
     /**
      * Displays a single Chat model.
      * @param integer $id

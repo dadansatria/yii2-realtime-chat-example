@@ -20,11 +20,11 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-        'admin-lte/css/AdminLTE.css',
-        'font-awesome/css/font-awesome.min.css'        
+        'css/site.css',  
     ];
     public $js = [
+        'js/socket.io-1.3.5.js',
+        'js/chat.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

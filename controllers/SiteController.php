@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Chat;
+use yii\helpers\Json;
 
 class SiteController extends Controller
 {
@@ -62,7 +64,29 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = 'main';
-        return $this->render('index');
+
+        $query = Chat::find()
+            ->orderBy(['id' => SORT_ASC])
+            ->all();
+
+        $chat = new Chat();
+        if (Yii::$app->request->post()) {
+            $teks = Yii::$app->request->post('teks');
+
+            $chat->user = Yii::$app->user->id;
+            $chat->teks = $teks;
+            $chat->save();
+
+            return Yii::$app->redis->executeCommand('PUBLISH', [
+                'channel' => 'chat',
+                'message' => Json::encode(['teks' => $teks,'user' => Yii::$app->user->id])
+            ]);
+
+        }
+
+        return $this->render('index',[
+            'query' => $query
+        ]);
     }
 
     /**

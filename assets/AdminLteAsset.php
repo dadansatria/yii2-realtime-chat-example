@@ -20,7 +20,7 @@ class AdminLteAsset extends AssetBundle
     	'admin-lte/css/AdminLTE.css',
     	'font-awesome/css/font-awesome.min.css'
     ];
-    public $js = ['admin-lte/js/AdminLTE/app.js'];
+    public $js = [];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
