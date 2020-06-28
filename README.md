@@ -16,10 +16,11 @@ DIRECTORY STRUCTURE
       web/                contains the entry script and Web resources
 
 
-Built With Socket.io 
+Getting Started
 -------------------
-
-"> <"
+1. run ```composer install``` to install the framework and its components
+2. run ```npm install``` to install the node modules
+3. edit database config at ```config/db.php```
 
 Database 
 -------------------
@@ -29,11 +30,11 @@ Apply the database migration to create the table required to store the chatting 
 php yii migrate/up
 ```
 
-Running Websocket Client Server 
+Running Node Service
 -------------------
 
 ```
-nodejs/node server.js
+node server.js
 ```
 
 Preview
