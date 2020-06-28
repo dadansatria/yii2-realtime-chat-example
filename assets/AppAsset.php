@@ -23,7 +23,7 @@ class AppAsset extends AssetBundle
         'css/site.css',  
     ];
     public $js = [
-        'js/socket.io-1.3.5.js',
+        '../node_modules/socket.io-client/dist/socket.io.js',
         'js/chat.js',
     ];
     public $depends = [

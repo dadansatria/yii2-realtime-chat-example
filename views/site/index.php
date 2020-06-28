@@ -111,15 +111,11 @@ $this->registerJs($js, \yii\web\View::POS_READY)
 
 <script type="text/javascript">
 $( document ).ready(function() {
-
-    var socket = io.connect('http://localhost:8890');
+    const socket = io.connect('http://localhost:8890');
 
     socket.on('chat', function (data) {
-
-        var message = JSON.parse(data);
-
-
-        session = <?php print Yii::$app->user->id; ?>
+        const message = JSON.parse(data);
+        let session = <?php print Yii::$app->user->id; ?>
 
         if (message.user == session) {
             $( "#append" ).append(
@@ -132,9 +128,9 @@ $( document ).ready(function() {
                             '</a>'+
                             message.teks +
                         '</p>' +
-                  '</div>'          
+                  '</div>'
             );
-        } else{
+        } else {
             $( "#append" ).append(
                   '<div class="item">' +
                         '<img src="img/avatar.png" alt="user image" class="online"/>'+
@@ -144,32 +140,10 @@ $( document ).ready(function() {
                             '</a>'+
                             message.teks +
                         '</p>' +
-                  '</div>'          
+                  '</div>'
             );
-            notifyMe();
-
         }
-
     });
 
 });
-function notifyMe() {
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-  else {
-    var notification = new Notification('Notification title', {
-      icon: 'img/avatar.png',
-      body: "Hey there! You've been notified!",
-    });
-
-    notification.onclick = function () {
-      window.open("http://localhost/yii2-realtime-chat-example/web/");      
-    };
-
-  }
-
-}  
-
-
-
 </script>

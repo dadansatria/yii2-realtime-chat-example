@@ -1,0 +1,35 @@
+{
+  "name": "yii2-realtime-chat-example",
+  "version": "1.0.0",
+  "description": "an example for realtime chat in yii framework",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dadansatria/yii2-realtime-chat-example.git"
+  },
+  "keywords": [
+    "Yii2",
+    "Realtime",
+    "chat",
+    "example"
+  ],
+  "author": "Dadan Satria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dadansatria/yii2-realtime-chat-example/issues"
+  },
+  "homepage": "https://github.com/dadansatria/yii2-realtime-chat-example#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "http": "0.0.1-security",
+    "redis": "^3.0.2",
+    "socket.io": "^2.3.0"
+  }
+}
