@@ -30,6 +30,6 @@
     "gulp": "^4.0.2",
     "http": "0.0.1-security",
     "redis": "^3.0.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
