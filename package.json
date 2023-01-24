@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/dadansatria/yii2-realtime-chat-example#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "gulp": "^4.0.2",
     "http": "0.0.1-security",
     "redis": "^3.0.2",
